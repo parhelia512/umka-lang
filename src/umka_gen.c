@@ -167,6 +167,13 @@ static bool optimizePop(CodeGen *gen)
         return true;
     }
 
+    // Optimization: PUSH_LOCAL_PTR + POP -> 0
+    if (prev && prev->opcode == OP_PUSH_LOCAL_PTR)
+    {
+        genRemoveInstr(gen);
+        return true;
+    }
+
     return false;
 }
 
