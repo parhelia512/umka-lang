@@ -1,9 +1,7 @@
 #ifndef UMKA_VM_H_INCLUDED
 #define UMKA_VM_H_INCLUDED
 
-#include "umka_api.h"
 #include "umka_common.h"
-#include "umka_lexer.h"
 #include "umka_types.h"
 
 

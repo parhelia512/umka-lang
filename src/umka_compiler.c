@@ -10,6 +10,7 @@
 #endif
 
 #include "umka_compiler.h"
+#include "umka_runtime.h"
 #include "umka_runtime_src.h"
 
 

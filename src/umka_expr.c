@@ -12,7 +12,7 @@
 #include "umka_stmt.h"
 
 
-void doPushConst(Umka *umka, const Type *type, const Const *constant)
+static void doPushConst(Umka *umka, const Type *type, const Const *constant)
 {
     if (type->kind == TYPE_UINT)
         genPushUIntConst(&umka->gen, constant->uintVal);
@@ -38,7 +38,7 @@ void doPushVarPtr(Umka *umka, const Ident *ident)
 }
 
 
-void doCopyResultToTempVar(Umka *umka, const Type *type)
+static void doCopyResultToTempVar(Umka *umka, const Type *type)
 {
     const Ident *resultCopy = identAllocTempVar(&umka->idents, &umka->types, &umka->modules, &umka->blocks, type, true);
     genCopyResultToTempVar(&umka->gen, type, resultCopy->offset);
